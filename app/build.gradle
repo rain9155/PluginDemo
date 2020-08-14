@@ -3,6 +3,11 @@ import com.example.plugin.TimeCostPlugin
 apply plugin: 'com.android.application'
 apply plugin: TimeCostPlugin
 
+time{
+    threshold = 200
+    filter = 'com.example.plugindemo'
+}
+
 android {
     compileSdkVersion 29
     buildToolsVersion "29.0.3"

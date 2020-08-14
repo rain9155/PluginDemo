@@ -2,7 +2,6 @@ package com.example.plugin;
 
 import com.android.build.gradle.AppExtension;
 
-import org.gradle.api.Action;
 import org.gradle.api.Plugin;
 import org.gradle.api.Project;
 import org.gradle.api.UnknownDomainObjectException;
@@ -15,8 +14,10 @@ import org.gradle.api.UnknownDomainObjectException;
  */
 public class TimeCostPlugin implements Plugin<Project> {
 
-    //当函数运行时间大于该阀值时判定为耗时函数，单位ms
-    public static long sThreshold = 200L;
+    //当函数运行时间大于threshold阀值时判定为耗时函数，单位ms
+    public static long sThreshold = 100L;
+    //当package有值时，只打印package包内的耗时函数
+    public static String sPackage = "";
 
     @Override
     public void apply(Project project) {
@@ -27,6 +28,9 @@ public class TimeCostPlugin implements Plugin<Project> {
             project.afterEvaluate(project1 -> {
                 if(time.getThreshold() >= 0){
                     sThreshold = time.getThreshold();
+                }
+                if(time.getFilter().length() > 0){
+                    sPackage = time.getFilter();
                 }
             });
             //通过project实例获取android gradle plugin中的名为android的扩展实例
@@ -44,6 +48,7 @@ public class TimeCostPlugin implements Plugin<Project> {
     static class Time{
 
         private long mThreshold = -1;
+        private String mFilter = "";
 
         public Time(){}
 
@@ -53,6 +58,14 @@ public class TimeCostPlugin implements Plugin<Project> {
 
         public void setThreshold(long threshold) {
             this.mThreshold = threshold;
+        }
+
+        public String getFilter() {
+            return mFilter;
+        }
+
+        public void setFilter(String filter) {
+            this.mFilter = filter;
         }
     }
 }

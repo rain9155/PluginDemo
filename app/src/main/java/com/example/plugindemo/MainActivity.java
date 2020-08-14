@@ -28,7 +28,6 @@ public class MainActivity extends AppCompatActivity {
         method1();
         method2();
         method3();
-        Thread.currentThread().getStackTrace();
     }
 
     private void method1(){
