@@ -1,0 +1,28 @@
+apply plugin: 'groovy'
+
+repositories {
+    google()
+    jcenter()
+}
+
+dependencies {
+    //引用gradle api
+    implementation gradleApi()
+    //引用android gradle api, 里面包含transform api
+    implementation 'com.android.tools.build:gradle:4.0.0'
+    //引用asm api
+    implementation 'org.ow2.asm:asm:7.0'
+    implementation 'org.ow2.asm:asm-commons:7.0'
+}
+
+apply plugin: 'maven'
+
+install {
+    repositories.mavenInstaller {
+        pom{
+            groupId = 'com.example.plugin'
+            artifactId = 'myplugin'
+            version = '1.0'
+        }
+    }
+}
