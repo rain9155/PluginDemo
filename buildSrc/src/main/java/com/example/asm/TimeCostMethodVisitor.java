@@ -66,7 +66,7 @@ class TimeCostMethodVisitor extends LocalVariablesSorter implements Opcodes {
             mv.visitVarInsn(ASTORE, thisMethodStack);
 
             //Log.e("rain", String.format（"===> %s.%s(%s:%s)方法耗时 %d ms", thisMethodStack.getClassName(), thisMethodStack.getMethodName(),thisMethodStack.getFileName(),thisMethodStack.getLineNumber(),costTime));
-            mv.visitLdcInsn("rain");
+            mv.visitLdcInsn("TimeCost");
             mv.visitLdcInsn("===> %s.%s(%s:%s)\u65b9\u6cd5\u8017\u65f6 %d ms");
             mv.visitInsn(ICONST_5);
             mv.visitTypeInsn(ANEWARRAY, "java/lang/Object");

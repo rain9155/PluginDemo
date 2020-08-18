@@ -15,7 +15,7 @@ public class MainActivity extends AppCompatActivity {
 //        long costTime = endTime - startTime;
 //        if(costTime > 100){
 //            StackTraceElement thisMethodStack = (new Exception()).getStackTrace()[0];//获得当前方法的StackTraceElement
-//            Log.e("rain", String.format(
+//            Log.e("TimeCost", String.format(
 //                    "===> %s.%s(%s:%s)方法耗时 %d ms",
 //                            thisMethodStack.getClassName(), //类的全限定名称
 //                            thisMethodStack.getMethodName(),//方法名
