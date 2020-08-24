@@ -1,4 +1,4 @@
-package com.example.plugindemo;
+package com.example.plugindemo.bean;
 
 /**
  * @author chenjianyu
@@ -17,5 +17,7 @@ public class OuterClass{
         return mData;
     }
 
-    class InnerClass{ }
+    class InnerClass{
+
+    }
 }

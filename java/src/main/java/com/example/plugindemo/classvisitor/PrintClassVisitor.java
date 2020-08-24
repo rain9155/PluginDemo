@@ -1,4 +1,4 @@
-package com.example.plugindemo;
+package com.example.plugindemo.classvisitor;
 
 import org.objectweb.asm.AnnotationVisitor;
 import org.objectweb.asm.Attribute;
@@ -10,12 +10,13 @@ import org.objectweb.asm.Opcodes;
 import org.objectweb.asm.TypePath;
 
 /**
+ * 打印类的信息
  * @author chenjianyu
  * @date 2020/8/20
  */
-public class ClassPrinter extends ClassVisitor implements Opcodes {
+public class PrintClassVisitor extends ClassVisitor implements Opcodes {
 
-    public ClassPrinter() {
+    public PrintClassVisitor() {
         super(ASM7);
     }
 

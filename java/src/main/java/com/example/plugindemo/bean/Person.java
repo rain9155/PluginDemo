@@ -1,4 +1,4 @@
-package com.example.plugindemo;
+package com.example.plugindemo.bean;
 
 /**
  * @author chenjianyu
