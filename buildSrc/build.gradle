@@ -14,15 +14,3 @@ dependencies {
     implementation 'org.ow2.asm:asm:7.0'
     implementation 'org.ow2.asm:asm-commons:7.0'
 }
-
-apply plugin: 'maven'
-
-install {
-    repositories.mavenInstaller {
-        pom{
-            groupId = 'com.example.plugin'
-            artifactId = 'myplugin'
-            version = '1.0'
-        }
-    }
-}

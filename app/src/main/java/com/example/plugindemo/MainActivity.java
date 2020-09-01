@@ -1,5 +1,6 @@
 package com.example.plugindemo;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
@@ -7,14 +8,16 @@ import android.util.Log;
 public class MainActivity extends AppCompatActivity {
 
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
+    protected void onCreate(Bundle savedInstanceState)  {
         long startTime = System.currentTimeMillis();
 
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
         long endTime = System.currentTimeMillis();
+
         long costTime = endTime - startTime;
+
         if(costTime > 100){
             StackTraceElement thisMethodStack = (new Exception()).getStackTrace()[0];//获得当前方法的StackTraceElement
             Log.e("TimeCost", String.format(
