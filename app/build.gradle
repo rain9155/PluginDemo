@@ -1,10 +1,10 @@
 apply plugin: 'com.android.application'
 
-//apply plugin: com.example.plugin.TimeCostPlugin
-//time{
-//    threshold = 200
-//    filter = 'com.example.plugindemo'
-//}
+apply plugin: com.example.plugin.TimeCostPlugin
+time{
+    threshold = 200
+    appPackage = 'com.example.plugindemo'
+}
 
 android {
     compileSdkVersion 29

@@ -29,8 +29,8 @@ public class TimeCostPlugin implements Plugin<Project> {
                 if(time.getThreshold() >= 0){
                     sThreshold = time.getThreshold();
                 }
-                if(time.getFilter().length() > 0){
-                    sPackage = time.getFilter();
+                if(time.getAppPackage().length() > 0){
+                    sPackage = time.getAppPackage();
                 }
             });
             //通过project实例获取android gradle plugin中的名为android的扩展实例
@@ -48,7 +48,7 @@ public class TimeCostPlugin implements Plugin<Project> {
     static class Time{
 
         private long mThreshold = -1;
-        private String mFilter = "";
+        private String mPackage = "";
 
         public Time(){}
 
@@ -60,12 +60,12 @@ public class TimeCostPlugin implements Plugin<Project> {
             this.mThreshold = threshold;
         }
 
-        public String getFilter() {
-            return mFilter;
+        public String getAppPackage() {
+            return mPackage;
         }
 
-        public void setFilter(String filter) {
-            this.mFilter = filter;
+        public void setAppPackage(String p) {
+            this.mPackage = p;
         }
     }
 }

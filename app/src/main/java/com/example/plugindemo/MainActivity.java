@@ -9,15 +9,12 @@ public class MainActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState)  {
-        long startTime = System.currentTimeMillis();
+        long startTime = System.currentTimeMillis();//start
 
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
 
-        long endTime = System.currentTimeMillis();
-
+        long endTime = System.currentTimeMillis();//end
         long costTime = endTime - startTime;
-
         if(costTime > 100){
             StackTraceElement thisMethodStack = (new Exception()).getStackTrace()[0];//获得当前方法的StackTraceElement
             Log.e("TimeCost", String.format(
@@ -30,29 +27,25 @@ public class MainActivity extends AppCompatActivity {
                     )
             );
         }
+
+//        try {
+//            method1();
+//            method2();
+//            method3();
+//        } catch (InterruptedException e) {
+//            e.printStackTrace();
+//        }
     }
 
-    private static void method1(){
-        try {
-            Thread.sleep(100);
-        } catch (InterruptedException e) {
-            e.printStackTrace();
-        }
+    private static void method1() throws InterruptedException {
+        Thread.sleep(500);
     }
 
-    public static void method2(){
-        try {
-            Thread.sleep(300);
-        } catch (InterruptedException e) {
-            e.printStackTrace();
-        }
+    public void method2() throws InterruptedException {
+        Thread.sleep(300);
     }
 
-    static void method3(){
-        try {
-            Thread.sleep(1000);
-        } catch (InterruptedException e) {
-            e.printStackTrace();
-        }
+    void method3() throws InterruptedException {
+        Thread.sleep(1000);
     }
 }
