@@ -33,7 +33,7 @@ class TimeCostMethodVisitor extends LocalVariablesSorter implements Opcodes {
 
     @Override
     public void visitInsn(int opcode) {
-        if(opcode == RETURN){
+        if(opcode >= IRETURN && opcode <= RETURN){
             //long endTime = System.currentTimeMillis();
             mv.visitMethodInsn(INVOKESTATIC, "java/lang/System", "currentTimeMillis", "()J", false);
             endTime = newLocal(Type.LONG_TYPE);

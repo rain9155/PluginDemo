@@ -1,6 +1,5 @@
 package com.example.plugindemo;
 
-import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
@@ -27,25 +26,12 @@ public class MainActivity extends AppCompatActivity {
                     )
             );
         }
-
-//        try {
-//            method1();
-//            method2();
-//            method3();
-//        } catch (InterruptedException e) {
-//            e.printStackTrace();
-//        }
     }
 
-    private static void method1() throws InterruptedException {
-        Thread.sleep(500);
-    }
-
-    public void method2() throws InterruptedException {
-        Thread.sleep(300);
-    }
-
-    void method3() throws InterruptedException {
-        Thread.sleep(1000);
+    @Override
+    protected void onStart() {
+        super.onStart();
+        JavaMethod.execute();
+        KotlinMethod.execute();
     }
 }
